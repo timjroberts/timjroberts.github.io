@@ -1,0 +1,21 @@
+{
+	"name": "web-app",
+	"description": "The hosting web application for https://www.timjroberts.com.",
+	"version": "0.0.0",
+	"scripts": {
+		"build": "tsc && vite build --outDir ../../dist/packages/web-app --emptyOutDir",
+		"serve": "vite"
+	},
+	"dependencies": {
+    "react": "^18.2",
+    "react-dom": "^18.2",
+		"react-router-dom": "^6.21",
+		"@mdx-js/react": "^3.0"
+	},
+	"devDependencies": {
+		"vite": "^4.0",
+		"@vitejs/plugin-react": "^4.2",
+    "@types/react": "^18.2",
+    "@types/react-dom": "^18.2"
+	}
+}

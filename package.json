@@ -1,0 +1,20 @@
+{
+	"name": "timjroberts-com-sources",
+	"private": true,
+	"description": "Sources for the website hosted at https://www.timjroberts.com",
+	"version": "0.0.0",
+	"scripts": {
+		"build": "nx run-many -t build",
+		"serve": "nx run-many -t serve"
+	},
+	"workspaces": {
+		"packages": [
+			"./packages/*"
+		]
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"nx": "^17.2",
+		"typescript": "^5.3"
+	}
+}

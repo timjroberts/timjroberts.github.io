@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"composite": true,
+		"rootDir": ".",
+		"target": "es2020",
+		"module": "esnext",
+		"sourceMap": true,
+		"declaration": true,
+		"declarationMap": true,
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"jsx": "react-jsx",
+		"lib": [
+			"ES2020", "DOM", "DOM.Iterable"
+		]
+	}
+}

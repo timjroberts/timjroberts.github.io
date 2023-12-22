@@ -1,0 +1,21 @@
+{
+	"name": "content",
+	"description": "Provides file based content for https://www.timjroberts.com.",
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"build": "contentlayer build"
+	},
+	"exports": {
+		".": {
+			"import": {
+				"default": "./.contentlayer/generated/index.mjs",
+				"types": "./.contentlayer/generated/index.d.ts"
+			}
+		}
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"contentlayer": "^0.3"
+	}
+}
