@@ -1,11 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { usePage, useRawMdx } from "./hooks";
+import { usePage, useMdxComponent } from "./hooks";
 
 export const Page: React.FC = () => {
 	const { slug } = useParams();
 	const page = usePage(slug);
-	const Content = useRawMdx(page.body.code);
+	const Content = useMdxComponent(page.body.code);
 
 	return (
 		<main>

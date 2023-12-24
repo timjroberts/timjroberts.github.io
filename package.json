@@ -15,6 +15,7 @@
 	"dependencies": {},
 	"devDependencies": {
 		"nx": "^17.2",
+		"@nrwl/workspace": "^17.2",
 		"typescript": "^5.3"
 	}
 }

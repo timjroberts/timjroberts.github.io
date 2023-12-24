@@ -3,10 +3,12 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider} from "react-router-dom";
 import { Home } from "./Home";
 import { Page } from "./Page";
+import { Post } from "./Post";
 
 const browserRouter = createBrowserRouter(
 	[
 		{ path: "/pages/:slug", index: true, element: <Page /> },
+		{ path: "/posts/:slug", index: true, element: <Post /> },
 		{ path: "/", index: true, element: <Home /> }
 	],
 	{ basename: import.meta["BASE_URL"] }

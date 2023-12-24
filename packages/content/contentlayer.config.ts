@@ -8,8 +8,7 @@ import { ComputedFields, defineDocumentType, makeSource } from "contentlayer/sou
 function createStandardFields(): ComputedFields {
 	return {
 		url: { type: "string", resolve: (document) => `/${document._raw.flattenedPath}` },
-		slug: { type: "string", resolve: (document) => document._raw.sourceFileName.match(/^(?<slug>[A-Za-z0-9\\-]+).md/).groups["slug"] },
-		fetchPath: { type: "string", resolve: document => `${document._raw.sourceFilePath.replace('/', "__")}.json` }
+		slug: { type: "string", resolve: (document) => document._raw.sourceFileName.match(/^(?<slug>[A-Za-z0-9\\-]+).md/).groups["slug"] }
 	}
 }
 
@@ -34,7 +33,8 @@ export const Post = defineDocumentType(() => ({
 		title: { type: "string", required: true  }
 	},
 	computedFields: {
-		...createStandardFields()
+		...createStandardFields(),	
+		fetchPath: { type: "string", resolve: document => `/c/post/${document._raw.sourceFilePath.replace('/', "__")}.json` }
 	}
 }));
 
