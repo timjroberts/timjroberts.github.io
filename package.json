@@ -4,8 +4,8 @@
 	"description": "Sources for the website hosted at https://www.timjroberts.com",
 	"version": "0.0.0",
 	"scripts": {
-		"build": "nx run-many -t build",
-		"serve": "nx run-many -t serve"
+		"build": "nx run content:build && nx run web-app:build",
+		"serve": "nx run web-app:serve"
 	},
 	"workspaces": {
 		"packages": [
