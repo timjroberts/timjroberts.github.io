@@ -19,5 +19,10 @@
 		"@vitejs/plugin-react": "^4.2",
     "@types/react": "^18.2",
     "@types/react-dom": "^18.2"
+	},
+	"nx": {
+		"implicitDependencies": [
+			"content"
+		]
 	}
 }
