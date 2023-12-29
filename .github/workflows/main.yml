@@ -17,4 +17,5 @@ jobs:
       - uses: actions/upload-pages-artifact@v2
         with:
           path: "dist/packages/web-app"
+      - uses: actions/deploy-pages@v4
 
