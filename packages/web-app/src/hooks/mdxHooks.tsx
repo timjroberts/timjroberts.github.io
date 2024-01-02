@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import * as _jsx_runtime from "react/jsx-runtime";
 
-export function useMdxComponent(mdxCode: string): React.FC<{ components?: any }> {
+export function useCompiledMdx(mdxCode: string): React.FC<{ components?: any }> {
 	return useMemo(() => {
 		if (!mdxCode?.length) return null;
 
