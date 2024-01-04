@@ -4,12 +4,12 @@ import { useAsyncPost, useCompiledMdx } from "./hooks";
 
 export const Post: React.FC = () => {
 	const { slug } = useParams();
-	const [ err, postMdx ] = useAsyncPost(slug);
-	const Content = useCompiledMdx(postMdx?.body?.code);
+	const [ err, post ] = useAsyncPost(slug);
+	const Content = useCompiledMdx(post?.body?.code);
 
 	return (
 		<main>
-			{ postMdx ? <Content /> : <span>Loading...</span> }
+			{ post ? <Content /> : <span>Loading...</span> }
 		</main>
 	);
 }

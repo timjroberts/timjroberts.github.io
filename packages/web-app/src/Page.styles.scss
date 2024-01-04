@@ -1,0 +1,61 @@
+.page-container {
+  display: flex;
+  font-family: "Times New Roman", Times, serif;
+  @media screen and (min-width: 1024px) {
+    margin-left: 10em;
+    margin-right: 10em;
+  }
+
+  .content {
+    padding: 1em;
+
+    h1 {
+      font-family: Helvetica, sans-serif;
+      font-size: xx-large;
+    }
+    h2 {
+      font-family: Helvetica, sans-serif;
+      font-size: x-large;
+    }
+    h3 {
+      font-family: Helvetica, sans-serif;
+      font-size: larger;
+    }
+    h4 {
+      font-family: Helvetica, sans-serif;
+      font-size: large;
+    }
+  }
+  .article {
+    width: 100%;
+  }
+  .paper {
+    width: 70%;
+  }
+
+  .sidebar {
+    padding: 1em;
+    width: auto;
+    font-family: Helvetica, sans-serif;
+
+    .section {
+      margin-bottom: 2em;
+
+      div:nth-child(1) {
+        font-weight: 800;
+        margin-bottom: 0.75em;
+      }
+    }
+    .toc-h1 {
+      font-size: smaller;
+    }
+    .toc-h2 {
+      font-size: smaller;
+      margin-left: 1.5em;
+    }
+    .toc-h3 {
+      font-size: smaller;
+      margin-left: 3em;
+    }
+  }
+}

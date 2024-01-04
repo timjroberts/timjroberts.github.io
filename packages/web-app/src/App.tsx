@@ -5,6 +5,7 @@ import { Home } from "./Home";
 import { Page } from "./Page";
 import { Post } from "./Post";
 
+import "./App.styles.scss";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const browserRouter = createBrowserRouter(

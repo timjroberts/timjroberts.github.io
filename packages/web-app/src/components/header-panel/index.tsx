@@ -10,12 +10,15 @@ export type HeaderPanelProps = {
 
 export const HeaderPanel: React.FC<HeaderPanelProps> = ({ title, headerElements }: HeaderPanelProps) => {
 	return (
-		<div className="container">
-			<div className="header">
+		<div className="header-container">
+			<div className="header header-f-container">
 				<span className="left"><img src={imgUrl} /></span>
 				{title && <span className="title">{title}</span>}
 				{headerElements &&
-					headerElements.map((c, i) => <span key={i} className="float-right">{c}</span>)}
+					<span className="float-right header-f-container">
+						{headerElements.map(
+							(c, i) => <span key={i}>{c}</span>)}
+					</span>}
 			</div>
 		</div>
 	);

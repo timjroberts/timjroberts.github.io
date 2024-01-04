@@ -2,16 +2,23 @@ $border-width: 1px;
 $border-color: lightgrey;
 $header-font: Helvetica, sans-serif;
 
-.container {
+.header-f-container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 5px;
+}
+
+.header-container {
+	padding-top: 8px;
 	height: 42px;
 	border-bottom: $border-width solid $border-color;
+	position: sticky;
+	top: 0;
+	background-color: white;
 
 	.header {
 		font-family: $header-font;
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		gap: 5px;
 
 		.title {
 			font-size: x-large;
