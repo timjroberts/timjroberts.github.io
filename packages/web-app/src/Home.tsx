@@ -19,11 +19,11 @@ export const Home: React.FC = () => (
 			</div>
 			<div className="sidebar">
 				<div className="section">
-					<div>Most Posted Categories</div>
+					<div className="title">Most Posted Categories</div>
 					<TopPostCategories top={6} />
 				</div>
 				<div className="section">
-					<div>Reading List</div>
+					<div className="title">Reading List</div>
 					<div>Click the <Icon name="paste" size="large" /> on any post to easily add it to your reading list.</div>
 				</div>
 				<div className="footnote">

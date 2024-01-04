@@ -33,7 +33,7 @@
     width: 70%;
   }
 
-  .sidebar {
+  .page-sidebar {
     padding: 1em;
     width: auto;
     font-family: Helvetica, sans-serif;
@@ -41,20 +41,26 @@
     .section {
       margin-bottom: 2em;
 
-      div:nth-child(1) {
+      .title {
         font-weight: 800;
         margin-bottom: 0.75em;
       }
     }
-    .toc-h1 {
+    .toc {
       font-size: smaller;
+      margin-bottom: 0.5em;
+    }
+    .toc:hover {
+      text-decoration: underline;
+    }
+    .toc-h1 {
+      font-weight: bold;
+      margin-left: 0em;
     }
     .toc-h2 {
-      font-size: smaller;
       margin-left: 1.5em;
     }
     .toc-h3 {
-      font-size: smaller;
       margin-left: 3em;
     }
   }

@@ -16,7 +16,7 @@ const toHtmlId: (source: {toString(): string}) => string = (source) =>
 	source.
 		toString()
 		.toLowerCase()
-		.replace(' ', '-');
+		.replace(/\s/g, '-');
 
 const headerComponents = {
 	h1: (() => {
@@ -83,13 +83,13 @@ const PaperContent: React.FC<PaperContentProps> = ({ headings, children }: Paper
 			<div className="content paper">
 				{ children }
 			</div>
-			<div className="sidebar">
+			<div className="page-sidebar">
 				<div className="section">
-					<div>Contents</div>
+					<div className="title">Contents</div>
 					<div>
 						{headings.map(
 							([type, target, displayText]) => 
-								<div key={target} className={`toc-${type}`}>
+								<div key={target} className={`toc toc-${type}`}>
 									<a href={`#${target}`}>{displayText}</a>
 								</div>)}
 					</div>
