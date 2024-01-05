@@ -12,6 +12,11 @@
 				"default": "./.contentlayer/generated/index.mjs",
 				"types": "./.contentlayer/generated/index.d.ts"
 			}
+		},
+		"./posts.json": {
+			"import": {
+				"default": "./.contentlayer/generated/posts.json"
+			}
 		}
 	},
 	"dependencies": {},
