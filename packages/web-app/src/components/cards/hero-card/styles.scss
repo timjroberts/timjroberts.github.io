@@ -1,0 +1,52 @@
+.hero-card-container {
+  position: relative;
+  @media screen and (max-width: 989px) {
+    display: none;
+  }
+  padding-top: 0.5em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid rgb(238, 238, 238);
+  min-height: 200px;
+  background-image: url("/assets/hero-card-splash.jpg");
+  background-size: cover;
+  opacity: 90%;
+
+  .head-thought {
+    min-height: 180px;
+    max-height: 180px;
+    min-width: 250px;
+    max-width: 250px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-image: url("/assets/head-thought.png");
+    background-size: cover; 
+  }
+
+  .t {
+    min-height: 180px;
+    max-height: 180px;
+    min-width: 350px;
+    max-width: 350px;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    transform: rotate(-10deg);
+    .a {
+      border: 4px solid black;
+      padding: 5px;
+
+      .b {
+        padding: 5px;
+        color: #3b5998;
+        font-size: 3em;
+        background-color: white;
+
+        .typing {
+          display: inline-block;
+          margin-left: 0.25em;
+        }
+      }
+    }
+  }
+}

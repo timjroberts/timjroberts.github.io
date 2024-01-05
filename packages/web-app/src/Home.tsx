@@ -1,5 +1,5 @@
 import React from "react";
-import { HeaderPanel, BrandIcon, Icon, PostSummaryCard, TopPostCategories } from "./components";
+import { HeaderPanel, BrandIcon, Icon, HeroCard, PostSummaryCard, TopPostCategories } from "./components";
 import { allPosts } from "./hooks";
 
 import "./Home.styles.scss";
@@ -15,6 +15,7 @@ export const Home: React.FC = () => (
 			]} />
 		<div className="home-container">
 			<div className="posts">
+				<HeroCard />
 				{allPosts.map(post => <PostSummaryCard key={post.slug} post={post} />)}
 			</div>
 			<div className="sidebar">
