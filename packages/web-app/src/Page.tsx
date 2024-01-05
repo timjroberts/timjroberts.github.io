@@ -12,13 +12,13 @@ import "./Page.styles.scss";
  * @param source An object that can be converted to a string via a `toString()` method.
  * @returns A string representation of `source` that is also a valid HTML identifer.
  */
-const toHtmlId: (source: {toString(): string}) => string = (source) =>
+export const toHtmlId: (source: {toString(): string}) => string = (source) =>
 	source.
 		toString()
 		.toLowerCase()
 		.replace(/\s/g, '-');
 
-const headerComponents = {
+export const headerComponents = {
 	h1: (() => {
 		const H1 = props => {
 			const target = toHtmlId(React.Children.toArray(props.children)[0]);
@@ -60,9 +60,9 @@ const headerComponents = {
 	})()
 }
 
-type ArticleContentProps = PropsWithChildren;
+export type ArticleContentProps = PropsWithChildren;
 
-const ArticleContent: React.FC<ArticleContentProps> = ({ children }: ArticleContentProps) => {
+export const ArticleContent: React.FC<ArticleContentProps> = ({ children }: ArticleContentProps) => {
 	return (
 		<div className="page-container">
 			<div className="content article">
@@ -72,12 +72,12 @@ const ArticleContent: React.FC<ArticleContentProps> = ({ children }: ArticleCont
 	);
 }
 
-type Heading = [type: string, target:string, displayText: string];
-type PaperContentProps = PropsWithChildren<{
+export type Heading = [type: string, target:string, displayText: string];
+export type PaperContentProps = PropsWithChildren<{
 	headings: Heading[];
 }>;
 
-const PaperContent: React.FC<PaperContentProps> = ({ headings, children }: PaperContentProps) => {
+export const PaperContent: React.FC<PaperContentProps> = ({ headings, children }: PaperContentProps) => {
 	return (
 		<div className="page-container">
 			<div className="content paper">
@@ -121,7 +121,7 @@ export const Page: React.FC = () => {
 			<HeaderPanel title={page.title} />
 			{asPaper
 				? <PaperContent headings={headings}><Content components={headerComponents} /></PaperContent>
-				: <ArticleContent><Content /></ArticleContent>}
+				: <ArticleContent><Content components={headerComponents} /></ArticleContent>}
 		</main>
 	);
 }
