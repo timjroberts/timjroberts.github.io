@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { useAsyncPost, useCompiledMdx } from "./hooks";
-import { HeaderPanel } from "./components";
+import { HeaderPanel, TypingDots } from "./components";
 import { getChildrenByTypeDeep } from "react-nanny";
 import { toHtmlId, Heading, ArticleContent, PaperContent, headerComponents } from "./Page";
 
@@ -27,7 +27,7 @@ export const Post: React.FC = () => {
 	return (
 		<main>
 			<HeaderPanel title={post?.title} />
-			{!post && <div>Loading...</div>}
+			{!post && <div className="page-loading"><div><TypingDots /></div></div>}
 			{post && 
 				(asPaper
 					? <PaperContent headings={headings}><Content components={headerComponents} /></PaperContent>

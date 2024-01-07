@@ -34,6 +34,7 @@
     transform: rotate(-10deg);
     .a {
       border: 4px solid black;
+      border-radius: 15px;
       padding: 5px;
 
       .b {
@@ -41,6 +42,7 @@
         color: #3b5998;
         font-size: 3em;
         background-color: white;
+        border-radius: 15px;
 
         .typing {
           display: inline-block;
