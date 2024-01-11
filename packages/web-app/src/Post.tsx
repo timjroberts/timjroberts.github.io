@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useAsyncPost, useCompiledMdx } from "./hooks";
 import { HeaderPanel, TypingDots } from "./components";
 import { getChildrenByTypeDeep } from "react-nanny";
-import { toHtmlId, Heading, ArticleContent, PaperContent, headerComponents } from "./Page";
+import { toHtmlId, Heading, ArticleContent, PaperContent, pageComponents } from "./Page";
 
 import "./Page.styles.scss";
 
@@ -30,8 +30,8 @@ export const Post: React.FC = () => {
 			{!post && <div className="page-loading"><div><TypingDots /></div></div>}
 			{post && 
 				(asPaper
-					? <PaperContent headings={headings}><Content components={headerComponents} /></PaperContent>
-					: <ArticleContent><Content components={headerComponents} /></ArticleContent>
+					? <PaperContent headings={headings}><Content components={pageComponents} /></PaperContent>
+					: <ArticleContent><Content components={pageComponents} /></ArticleContent>
 				)}
 		</main>
 	);

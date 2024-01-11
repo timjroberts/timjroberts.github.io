@@ -1,6 +1,8 @@
 .page-container {
   display: flex;
   font-family: "Times New Roman", Times, serif;
+  font-size: large;
+  line-height: 1.3em;
   @media screen and (min-width: 1024px) {
     margin-left: 10em;
     margin-right: 10em;
@@ -24,6 +26,10 @@
     h4 {
       font-family: Helvetica, sans-serif;
       font-size: large;
+    }
+    picture {
+      display: block;
+      text-align: center;
     }
   }
   .article {

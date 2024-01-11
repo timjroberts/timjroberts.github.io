@@ -4,7 +4,7 @@
 	"version": "0.0.0",
 	"scripts": {
 		"build": "tsc && vite build --outDir ../../dist/packages/web-app --emptyOutDir",
-		"postbuild": "mkdir -p ../../dist/packages/web-app/c/post && cp -R ../content/.contentlayer/generated/Post/* ../../dist/packages/web-app/c/post",
+		"postbuild": "mkdir -p ../../dist/packages/web-app/c/post && cp -R ../content/.contentlayer/generated/Post/* ../../dist/packages/web-app/c/post && cp -R ../content/posts/*.png ../../dist/packages/web-app/c/post",
 		"serve": "vite"
 	},
 	"dependencies": {

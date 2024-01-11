@@ -6,3 +6,5 @@ export * from "./cards/post-summary";
 export * from "./cards/hero-card";
 export * from "./category-link";
 export * from "./top-post-categories";
+export * from "./picture";
+export * from "./link";

@@ -1,7 +1,7 @@
 import React from "react";
+import { TypingDots } from "../../typing-dots";
 
 import "./styles.scss";
-import { TypingDots } from "../..";
 
 export const HeroCard: React.FC = () => (
   <div className="hero-card-container">

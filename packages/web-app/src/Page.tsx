@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, memo, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { usePage, useCompiledMdx } from "./hooks";
-import { HeaderPanel } from "./components";
+import { HeaderPanel, Picture, Link } from "./components";
 import { getChildrenByTypeDeep } from "react-nanny";
 
 import "./Page.styles.scss";
@@ -18,7 +18,9 @@ export const toHtmlId: (source: {toString(): string}) => string = (source) =>
 		.toLowerCase()
 		.replace(/\s/g, '-');
 
-export const headerComponents = {
+export const pageComponents = {
+	Picture: Picture,
+	Link: Link,
 	h1: (() => {
 		const H1 = props => {
 			const target = toHtmlId(React.Children.toArray(props.children)[0]);
@@ -120,8 +122,8 @@ export const Page: React.FC = () => {
 		<main>
 			<HeaderPanel title={page.title} />
 			{asPaper
-				? <PaperContent headings={headings}><Content components={headerComponents} /></PaperContent>
-				: <ArticleContent><Content components={headerComponents} /></ArticleContent>}
+				? <PaperContent headings={headings}><Content components={pageComponents} /></PaperContent>
+				: <ArticleContent><Content components={pageComponents} /></ArticleContent>}
 		</main>
 	);
 }
