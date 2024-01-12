@@ -3,7 +3,7 @@ import React from "react";
 import "./styles.scss";
 
 export type BrandIconProps = {
-	brand: "github" | "x-twitter" | "linkedin";
+	brand: "github" | "x-twitter" | "linkedin" | "facebook";
 	size?: "small" | "large";
 }
 

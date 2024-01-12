@@ -8,7 +8,7 @@ export type LinkProps = PropsWithChildren<{
 }>
 
 export const Link: React.FC<LinkProps> = ({ href, children }: LinkProps) => {
-  let content = useMemo(
+  const content = useMemo(
     () => href.startsWith('/')
           ? <span className="link-container">{children}</span>
           : href.includes("/github.com/")
@@ -18,9 +18,10 @@ export const Link: React.FC<LinkProps> = ({ href, children }: LinkProps) => {
             : children,
       []
   );
+  const target = href.startsWith('/') ? "_self" : "_blank";
 
   return (
-    <a href={href}>
+    <a href={href} target={target}>
       {content}
     </a>
   );
