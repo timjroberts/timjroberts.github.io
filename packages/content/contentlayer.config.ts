@@ -1,5 +1,5 @@
 import { ComputedFields, defineDocumentType, makeSource } from "contentlayer/source-files";
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import readTime from "reading-time";
 
 /**
@@ -43,7 +43,8 @@ export const Post = defineDocumentType(() => ({
 		...createStandardFields(),	
 		fetchPath: { type: "string", resolve: document => `/c/post/${document._raw.sourceFilePath.replace('/', "__")}.json` },
 		timeStamp: { type: "number", resolve: document => Date.parse(document.date) },
-		readTime: { type: "string", resolve: document => readTime(document.body.raw).text }
+		readTime: { type: "string", resolve: document => readTime(document.body.raw).text },
+		hasThumbNail: { type: "string", resolve: document => existsSync(`${document._raw.flattenedPath}.png`) ? true : false }
 	}
 }));
 
