@@ -41,10 +41,17 @@
     grid-column-end: 2;
   }
   .thumbnail {
+    @media screen and (max-width: 989px) {
+      display: none;
+    }
     grid-column-start: 2;
     grid-column-end: 2;
     display: flex;
     justify-content: center;
+
+    img {
+      object-fit: contain;
+    }
   }
   .footer {
     font-size: smaller;
