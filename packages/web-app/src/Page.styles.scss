@@ -1,7 +1,6 @@
 .page-container {
   display: flex;
-  font-family: "Times New Roman", Times, serif;
-  font-size: large;
+  font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
   line-height: 1.3em;
   @media screen and (min-width: 1024px) {
     margin-left: 10em;
@@ -12,19 +11,19 @@
     padding: 1em;
 
     h1 {
-      font-family: Helvetica, sans-serif;
+      font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: xx-large;
     }
     h2 {
-      font-family: Helvetica, sans-serif;
+      font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: x-large;
     }
     h3 {
-      font-family: Helvetica, sans-serif;
+      font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: larger;
     }
     h4 {
-      font-family: Helvetica, sans-serif;
+      font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: large;
     }
     picture {
@@ -42,7 +41,7 @@
   .page-sidebar {
     padding: 1em;
     width: auto;
-    font-family: Helvetica, sans-serif;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
     .section {
       margin-bottom: 2em;

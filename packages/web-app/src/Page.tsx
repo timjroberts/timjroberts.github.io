@@ -13,8 +13,7 @@ import "./Page.styles.scss";
  * @returns A string representation of `source` that is also a valid HTML identifer.
  */
 export const toHtmlId: (source: {toString(): string}) => string = (source) =>
-	source.
-		toString()
+	source.toString()
 		.toLowerCase()
 		.replace(/\s/g, '-');
 
