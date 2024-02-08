@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useAsyncPost, useCompiledMdx } from "./hooks";
 import { HeaderPanel, TypingDots } from "./components";
 import { getChildrenByTypeDeep } from "react-nanny";
+import Giscus from "@giscus/react";
 import { toHtmlId, Heading, ArticleContent, PaperContent, pageComponents } from "./Page";
 
 import "./Page.styles.scss";
@@ -29,10 +30,28 @@ export const Post: React.FC = () => {
 			<HeaderPanel title={post?.title} />
 			{!post && <div className="page-loading"><div><TypingDots /></div></div>}
 			{post && 
-				(asPaper
-					? <PaperContent headings={headings}><Content components={pageComponents} /></PaperContent>
-					: <ArticleContent><Content components={pageComponents} /></ArticleContent>
-				)}
+				<React.Fragment>
+					{asPaper
+						? <PaperContent headings={headings}><Content components={pageComponents} /></PaperContent>
+						: <ArticleContent><Content components={pageComponents} /></ArticleContent>
+					}
+					<div className="comments-container">
+						<Giscus
+							repo="timjroberts/timjroberts.github.io"
+							repoId="R_kgDOK3UPSg"
+							category="Announcements"
+							categoryId="DIC_kwDOK3UPSs4CdB1J"
+							mapping="pathname"
+							strict="0"
+							reactionsEnabled="1"
+							emitMetadata="0"
+							inputPosition="top"
+							theme="light"
+							lang="en"
+							loading="lazy" />
+					</div>
+				</React.Fragment>}
 		</main>
+		
 	);
 }
