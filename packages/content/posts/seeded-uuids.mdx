@@ -1,0 +1,24 @@
+---
+title: Creating seeded UUID's
+date: 2024-05-23:09:00
+summary: |
+  An example function that generates the same UUID for a given seed value.
+category: typescript
+---
+This is a quick post to providing an example function that will generate the same UUID when presented with a given seed value:
+
+```ts
+const createUUIDfromSeed = (seed: string) => {
+    const hash = crypto.createHash("sha256").update(seed).digest("hex");
+
+    return [
+      hash.substring(0, 8),
+      hash.substring(8, 4),
+      `4${hash.substring(12, 3)}`, // Set the version to 4
+      `8${hash.substring(15, 3)}`, // Set the variant to 8 (RFC 4122)
+      hash.substring(18, 12),
+    ].join("-");
+  }
+```
+
+With the version and variant values set, the UUID that is created should be compatible wherever a standard UUID/GUID is required. 
