@@ -1,18 +1,18 @@
 .comments-container {
   display: flex;
   @media screen and (min-width: 1024px) {
-    margin-left: 10em;
-    margin-right: 10em;
+    margin-left: 20em;
+    margin-right: 20em;
   }
 }
 
 .page-container {
   display: flex;
   font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
-  line-height: 1.3em;
+  line-height: 1.5em;
   @media screen and (min-width: 1024px) {
-    margin-left: 10em;
-    margin-right: 10em;
+    margin-left: 20em;
+    margin-right: 20em;
   }
 
   .content {
