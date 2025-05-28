@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, memo, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { usePage, useCompiledMdx } from "./hooks";
-import { HeaderPanel, Picture, Link } from "./components";
+import { HeaderPanel, Picture, Link, Code } from "./components";
 import { getChildrenByTypeDeep } from "react-nanny";
 
 import "./Page.styles.scss";
@@ -20,6 +20,14 @@ export const toHtmlId: (source: {toString(): string}) => string = (source) =>
 export const pageComponents = {
 	Picture: Picture,
 	Link: Link,
+	code: (() => {
+		const AdaptedCode = props => {
+			return props.className
+				? <Code lang={props.className.split('-')[1]} code={props.children} />
+				: <code>{props.children}</code>
+		}
+		return memo(AdaptedCode);
+	})(),
 	h1: (() => {
 		const H1 = props => {
 			const target = toHtmlId(React.Children.toArray(props.children)[0]);

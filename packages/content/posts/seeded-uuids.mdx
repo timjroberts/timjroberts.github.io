@@ -7,7 +7,7 @@ category: typescript
 ---
 This is a quick post that demonstrates a function that will generate the _same_ UUID when presented with the _same_ seed value:
 
-```ts
+```typescript
 const createUUIDfromSeed = (seed: string) => {
     const hash = crypto.createHash("sha256").update(seed).digest("hex");
 

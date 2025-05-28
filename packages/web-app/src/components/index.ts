@@ -8,3 +8,4 @@ export * from "./category-link";
 export * from "./top-post-categories";
 export * from "./picture";
 export * from "./link";
+export * from "./code";
