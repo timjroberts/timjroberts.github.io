@@ -12,8 +12,16 @@
   font-size: 17px;
   line-height: 1.5em;
   @media screen and (min-width: 1024px) {
+    margin-left: 10em;
+    margin-right: 10em;
+  }
+  @media screen and (min-width: 1460px) {
     margin-left: 20em;
     margin-right: 20em;
+  }
+  @media screen and (min-width: 2048px) {
+    margin-left: 40em;
+    margin-right: 40em;
   }
 
   .content {
