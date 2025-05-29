@@ -73,7 +73,7 @@ export type ArticleContentProps = PropsWithChildren;
 
 export const ArticleContent: React.FC<ArticleContentProps> = ({ children }: ArticleContentProps) => {
 	return (
-		<div className="page-container">
+		<div className="page-container container">
 			<div className="content article">
 				{ children }
 			</div>
@@ -88,7 +88,7 @@ export type PaperContentProps = PropsWithChildren<{
 
 export const PaperContent: React.FC<PaperContentProps> = ({ headings, children }: PaperContentProps) => {
 	return (
-		<div className="page-container">
+		<div className="page-container container">
 			<div className="content paper">
 				{ children }
 			</div>

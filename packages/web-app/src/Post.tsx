@@ -35,7 +35,7 @@ export const Post: React.FC = () => {
 						? <PaperContent headings={headings}><Content components={pageComponents} /></PaperContent>
 						: <ArticleContent><Content components={pageComponents} /></ArticleContent>
 					}
-					<div className="comments-container">
+					<div className="comments-container container">
 						<Giscus
 							repo="timjroberts/timjroberts.github.io"
 							repoId="R_kgDOK3UPSg"

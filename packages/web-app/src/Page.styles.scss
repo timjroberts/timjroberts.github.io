@@ -1,16 +1,8 @@
 .comments-container {
   display: flex;
-  @media screen and (min-width: 1024px) {
-    margin-left: 20em;
-    margin-right: 20em;
-  }
 }
 
-.page-container {
-  display: flex;
-  font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
-  font-size: 17px;
-  line-height: 1.5em;
+.container {
   @media screen and (min-width: 1024px) {
     margin-left: 10em;
     margin-right: 10em;
@@ -23,10 +15,18 @@
     margin-left: 40em;
     margin-right: 40em;
   }
+}
+
+.page-container {
+  display: flex;
+  font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 17px;
+  line-height: 1.5em;
 
   .content {
     padding: 1em;
     text-align: justify;
+    font-size: larger;
 
     h1 {
       font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
