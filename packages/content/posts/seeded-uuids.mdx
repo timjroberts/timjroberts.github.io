@@ -13,12 +13,24 @@ const createUUIDfromSeed = (seed: string) => {
 
     return [
       hash.substring(0, 8),
-      hash.substring(8, 4),
-      `4${hash.substring(12, 3)}`, // Set the version to 4
-      `8${hash.substring(15, 3)}`, // Set the variant to 8 (RFC 4122)
-      hash.substring(18, 12),
+      hash.substring(8, 12),
+      `4${hash.substring(12, 15)}`, // Set the version to 4
+      `8${hash.substring(15, 18)}`, // Set the variant to 8 (RFC 4122)
+      hash.substring(53), // Use the tail characters of the hash string
     ].join("-");
   }
 ```
 
-With the version and variant values set, the UUID that is created should be compatible wherever a standard UUID/GUID is required. 
+With the version and variant values included in the correct segments, the UUID that is created should be compatible
+wherever a standard UUID/GUID is required.
+
+Alternatively, if you need a new UUID, rather than creating one from a given seed, generate the `hash` using something
+like this:
+
+```typescript
+const hash = createHash("sha256").update(
+  Math.random().toString(36)
+).digest("hex");
+```
+
+This code runs in Node.js, and in modern Browsers regardless of whether it is running in a secure context.
