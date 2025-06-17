@@ -1,0 +1,23 @@
+---
+title: Shared Memory in Effect
+date: 2025-06-17:09:00
+summary: |
+  Building Workers with Effect is now super easy, but you're still stuck with posting messages between them. Let's build some new Effect based primitives that allow the Worker's and the main thread to share and access shared memory.
+category: typescript,effect
+---
+With [Effect v3](https://effect.website/) you have access to simpler APIs for both forking and for working with Workers
+(threads). While these APIs are more agnostic of platform, they still principally run using the notion of posting
+messages. Obviously, beneath the hood, Effect continues to make use of the `postMessage(...)` API. Before
+continuing, I should point out that there is nothing wrong with this. In fact it's quite a desirable trait and
+operates very much like an [Actor](https://en.wikipedia.org/wiki/Actor_model) model, where influence between Workers is
+achieved indirectly through the passing of messages. Consequently, even with each Worker running in parallel, each
+preserves its own private state, and this in turn removes the need for lock-based synchronization primitives.
+
+While Workers are _Actor like_, there is actually, much, much, more to an Actor framework than preserving private
+state and the processing of messages. For contrast, consider comparing the use of Workers with something like Effect
+Cluster, a solution that is a fully fledged Actor framework.
+
+While we typically use the `postMessage(...)` API to communicate between Workers, we can post a message that
+contains a reference to a `SharedArrayBuffer` and then have the Workers read and write directly from and to that
+buffer in a way that is more like direct memory. That sounds more like a _thread_, and indeed it is. What also comes
+with it is the same multi-threading issues that we've seen in the past.
