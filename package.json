@@ -5,6 +5,8 @@
 	"version": "0.0.0",
 	"scripts": {
 		"build": "nx run content:build && nx run web-app:build",
+		"prestart": "npm run build",
+		"start": "http-server ./dist/packages/web-app",
 		"serve": "nx run web-app:serve"
 	},
 	"workspaces": {
@@ -16,7 +18,8 @@
 	"devDependencies": {
 		"nx": "^17.2",
 		"@nrwl/workspace": "^17.2",
-		"typescript": "^5.3"
+		"typescript": "^5.3",
+		"http-server": "^14.1.1"
 	},
 	"optionalDependencies": {
 		"@nx/nx-linux-x64-gnu": "^17.2"
